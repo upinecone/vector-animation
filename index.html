@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualizer</title>
+    <style>
+        /* CSS is included here */
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background-color: #000000;
+            font-family: 'Inter', sans-serif;
+        }
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            padding: 15px;
+            background: rgba(10, 10, 20, 0.8);
+            border-radius: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            color: #bab8b8;
+        }
+        #fileInput {
+            color: #716e6e;
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        #audioElement {
+            width: 300px;
+            height: 30px;
+            background: #555;
+            border-radius: 6px;
+        }
+    </style>
+    <!-- Three.js library is loaded via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="info" style="position: absolute; top: 10px; left: 10px; color: white; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 5px;">
+         Upload a sound file below.
+    </div>
+
+    <div id="controls">
+        <label for="fileInput">Upload Audio (.mp3, .wav):</label>
+        <input type="file" id="fileInput" accept="audio/*">
+        <audio id="audioElement" controls autoplay loop></audio>
+    </div>
+    
+    <!-- Link to the external JavaScript file (visualizer.js) -->
+    <script src="visualizer.js"></script>
+</body>
+</html>
